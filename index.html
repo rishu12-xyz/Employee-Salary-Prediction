@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Employee Salary Predictor</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>💼 Employee Salary Prediction</h1>
+    <form id="salaryForm">
+      <label>Age: <input type="number" name="age" min="18" max="65" required></label>
+      <label>Education:
+        <select name="education">
+          <option>Bachelors</option>
+          <option>Masters</option>
+          <option>PhD</option>
+          <option>HS-grad</option>
+          <option>Assoc</option>
+          <option>Some-college</option>
+        </select>
+      </label>
+      <label>Occupation:
+        <select name="occupation">
+          <option>Tech-support</option>
+          <option>Craft-repair</option>
+          <option>Other-service</option>
+          <option>Sales</option>
+          <option>Exec-managerial</option>
+          <option>Prof-specialty</option>
+          <option>Handlers-cleaners</option>
+          <option>Machine-op-inspct</option>
+          <option>Adm-clerical</option>
+          <option>Farming-fishing</option>
+          <option>Transport-moving</option>
+          <option>Priv-house-serv</option>
+          <option>Protective-serv</option>
+          <option>Armed-Forces</option>
+        </select>
+      </label>
+      <label>Hours per Week: <input type="number" name="hours-per-week" min="1" max="80" required></label>
+      <label>Experience (Years): <input type="number" name="experience" min="0" max="40" required></label>
+      <button type="submit">Predict Salary Class</button>
+    </form>
+    <div id="result"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
