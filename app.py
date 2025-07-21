@@ -9,7 +9,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Load the trained model
-model = joblib.load("best_model.pkl")
+model = joblib.load("model.pkl")
 
 @app.route("/predict", methods=["POST"])
 def predict():
