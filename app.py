@@ -1,4 +1,3 @@
-
 # Flask API version for Employee Salary Classification
 from flask import Flask, request, jsonify
 from flask_cors import CORS
@@ -11,11 +10,17 @@ CORS(app)
 # Load the trained model
 model = joblib.load("best_model.pkl")
 
+# ✅ Add a root route to confirm API is live
+@app.route("/")
+def home():
+    return "✅ Employee Salary Prediction API is Live!"
+
 @app.route("/predict", methods=["POST"])
 def predict():
     data = request.get_json()
-    # If data is a list, treat as batch; else, single prediction
+
     if isinstance(data, list):
+        # Batch prediction
         df = pd.DataFrame(data)
         preds = model.predict(df)
         return jsonify({"predictions": preds.tolist()})
@@ -27,4 +32,3 @@ def predict():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
-
